@@ -1,6 +1,37 @@
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+}
+
+.star {
+  height: 20px;
+}
+.refresh {
+  height: 20px;
+  margin-left: 50px;
+  margin-top: 15px;
+}
 .board {
   max-width: 750px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: dimgray;
+  border-radius: 10px;
+  padding-top: 30px;
+}
+
+.message {
+  color: whitesmoke;
+  font-weight: 800px;
+  font-size: 17px;
 }

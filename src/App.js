@@ -9,6 +9,8 @@ import Koopa from "./images/koopa.jpg";
 import Peach from "./images/peach.png";
 import Toadstool from "./images/toadstool.jpg";
 import Wario from "./images/wario.jpg";
+import Star from "./images/star.png";
+import Refresh from "./images/refresh.png";
 
 class App extends Component {
   state = {
@@ -77,18 +79,29 @@ class App extends Component {
 
   render() {
     return (
-      <div className="board">
-        {this.state.cards.map((card, index) => {
-          return (
-            <Card
-              key={index}
-              image={card.image}
-              flipped={card.flipped}
-              click={() => this.flipHandler(index)}
-            />
-          );
-        })}
-        <p>{this.state.message}</p>
+      <div className="container">
+        <h1>Memory Game</h1>
+        <div className="score">
+          <img src={Star} className="star" alt="Star" />
+          <img src={Star} className="star" alt="Star" />
+          <img src={Star} className="star" alt="Star" />
+          <p>0 move(s)</p>
+          <p>0 mins 0 secs</p>
+          <img src={Refresh} className="refresh" alt="Refresh" />
+        </div>
+        <div className="board">
+          {this.state.cards.map((card, index) => {
+            return (
+              <Card
+                key={index}
+                image={card.image}
+                flipped={card.flipped}
+                click={() => this.flipHandler(index)}
+              />
+            );
+          })}
+          <p className="message">{this.state.message}</p>
+        </div>
       </div>
     );
   }
